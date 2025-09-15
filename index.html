@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Learning from a Physical World Model</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Robot Learning from a Physical World Model</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper video. -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" controls autoplay muted loop height="100%">
+        <source src="./static/videos/teaser-uh1-long.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section> -->
+<!--/ Paper video. -->
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+              We introduce PhysWorld, a framework that enables robot learning from video generation through physical world modeling. 
+              Recent video generation models can synthesize photorealistic demonstrations from language commands and images, offering a powerful yet underexplored source of training signals for robotics. 
+              However, directly retargeting pixel motions from generated videos to robots neglects physics, often resulting in inaccurate manipulations. PhysWorld addresses this limitation by coupling video generation with physical world reconstruction. 
+              Given a single image and a language command, our method generates task-conditioned videos and reconstructs a physically interactable digital twin of the scene, where generated video motions are grounded into physically accurate actions through object-centric residual reinforcement learning. 
+              This synergy transforms implicit visual guidance into executable robotic trajectories, eliminating the need for real robot data collection and enabling zero-shot generalizable robotic manipulation. 
+              Experiments on diverse real-world tasks show that PhysWorld substantially improves manipulation accuracy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+<!-- / Abstract. -->
+
+<!-- Demo video. -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <!-- <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Robot Demo</h2>
+    </div> -->
+    <!-- <div class="hero-body">
+      <video id="teaser" controls autoplay muted loop height="100%">
+        <source src="./static/videos/robot-demo-uh1.mp4"
+                type="video/mp4">
+      </video>
+    </div> -->
+
+    <!-- Head -->
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">From Video Generation to Robotic Manipulation</h2>
+    </div>
+    <!--/ Head -->
+    </br>
+
+<!-- 
+    <div class="columns is-centered has-text-centered">
+      <h3 class="title is-4">Play Piano & Play Drums</h3>
+    </div>
+    </br> -->
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <h3 class="title is-4">Video Generation</h3>
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/spoon_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <h3 class="title is-4">Robotic Manipulation</h3>
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/spoon_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/sweep_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/sweep.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/tomato_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/tomato.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/whiteboard_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/whiteboard2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/shoe_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/shoe_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/pan_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/pan_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/lid_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/lid_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/flower_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/flower_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/fish_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/fish_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Video Generation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/book_gen.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-6">
+        <!-- <h3 class="title is-4">Robotic Manipulation</h3> -->
+        <video id="teaser" controls autoplay muted loop height="100%">
+          <!-- playsinline -->
+          <source src="./static/videos/book_small.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--/ Demo video. -->
+
+
+</body>
+</html>
